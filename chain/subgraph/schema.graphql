@@ -1,0 +1,9 @@
+type Post @entity(immutable: false) {
+  id: ID!
+  title: String!
+  contentHash: String!
+  published: Boolean!
+  postContent: String!
+  createdAtTimestamp: BigInt!
+  updatedAtTimestamp: BigInt!
+}
