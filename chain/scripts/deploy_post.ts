@@ -9,7 +9,7 @@ async function main() {
 
   await blog.waitForDeployment();
 
-  const configPath = path.join(__dirname, "../config.js");
+  const configPath = path.join(__dirname, "../../webapp/config.js");
   const contractAddress = await blog.getAddress();
   const startBlock = await ethers.provider.getBlockNumber();
 

@@ -1,5 +1,10 @@
 import React, { ReactNode } from "react";
 import Header from "./header";
+import dynamic from "next/dynamic";
+
+const Nav = dynamic(() => import("./nav"), {
+  ssr: false,
+});
 
 type Props = {
   children: ReactNode;
@@ -8,7 +13,8 @@ type Props = {
 export function Layout(props: Props) {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      {/* <Header /> */}
+      <Nav />
       <main className="container mx-auto px-4 py-8 flex-grow max-w-3xl">
         {props.children}
       </main>
