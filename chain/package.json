@@ -11,7 +11,7 @@
   },
   "scripts": {
     "accounts": "yarn hardhat run scripts/getAccounts.js",
-    "start": "yarn hardhat node",
+    "start": "yarn hardhat node --hostname 0.0.0.0",
     "test": "yarn hardhat test",
     "compile": "yarn hardhat compile",
     "ignition_test": "yarn hardhat ignition deploy ./ignition/modules/deploy_classtoken.ts --network localhost",

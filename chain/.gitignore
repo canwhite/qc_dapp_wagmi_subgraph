@@ -18,3 +18,7 @@ ignition/deployments/chain-31337
 
 # remove the config.js
 config.js
+
+# 忽略 subgraph 相关构建文件和生成文件
+/subgraph/build/*
+/subgraph/generated/*

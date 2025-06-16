@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // 替换为你的合约地址，例如 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
+// test for classtoken
 export default function TokenBalance({ ssrDisabled = true }) {
   const { address, isConnected } = useAccount();
   const [recipient, setRecipient] = useState("");

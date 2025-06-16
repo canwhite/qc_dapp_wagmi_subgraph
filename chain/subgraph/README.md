@@ -89,6 +89,7 @@ dataSources:
 
 ```
 #TODO, can not use full text， why?
+# need to get info about entity
 
 type Post @entity(immutable: false) {
   id: ID!

@@ -129,3 +129,56 @@ export class Post extends Entity {
     this.set("updatedAtTimestamp", Value.fromBigInt(value));
   }
 }
+
+export class Query extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id != null, "Cannot save Query entity without an ID");
+    if (id) {
+      assert(
+        id.kind == ValueKind.STRING,
+        `Entities of type Query must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
+      );
+      store.set("Query", id.toString(), this);
+    }
+  }
+
+  static loadInBlock(id: string): Query | null {
+    return changetype<Query | null>(store.get_in_block("Query", id));
+  }
+
+  static load(id: string): Query | null {
+    return changetype<Query | null>(store.get("Query", id));
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get posts(): Array<string> {
+    let value = this.get("posts");
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toStringArray();
+    }
+  }
+
+  set posts(value: Array<string>) {
+    this.set("posts", Value.fromStringArray(value));
+  }
+}

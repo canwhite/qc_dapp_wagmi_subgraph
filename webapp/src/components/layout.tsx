@@ -13,6 +13,7 @@ type Props = {
 export function Layout(props: Props) {
   return (
     <div className="min-h-screen flex flex-col">
+      {/* test for ClassToken */}
       {/* <Header /> */}
       <Nav />
       <main className="container mx-auto px-4 py-8 flex-grow max-w-3xl">
