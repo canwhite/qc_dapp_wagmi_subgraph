@@ -28,11 +28,11 @@ export default function Posts() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-12">
-      <div className="space-y-6">
+    <div className="max-w-3xl w-full mx-auto py-12">
+      <div className="space-y- flex-col w-full">
         {posts.map((post, index) => (
           <Link href={`/post/${post.id}`} key={index}>
-            <div className="border rounded-lg p-6 hover:bg-gray-50 transition-colors cursor-pointer flex items-center justify-between">
+            <div className="border mt-2 rounded-lg p-6 hover:bg-gray-50 transition-colors cursor-pointer w-full flex items-center justify-between">
               <h3 className="text-2xl font-bold">{post.title}</h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
